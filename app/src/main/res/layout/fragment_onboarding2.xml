@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/mikencoss"
+    android:alpha="0.9"
+    android:gravity="center">
+
+<!--    <ImageView-->
+<!--        android:layout_width="180dp"-->
+<!--        android:layout_height="180dp"-->
+<!--        android:layout_marginTop="-70dp"-->
+<!--        android:src="@drawable/mikenco" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="MIKENCO"-->
+<!--        android:textSize="22dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="#FF5722"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="TẶNG 01 BÌNH NƯỚC MIKENCO trị giá 300K-->
+<!--Cho Duy nhất 50 hoá đơn 2 triệu ++ trở lên "-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="17dp"-->
+<!--        android:textColor="#573930"-->
+<!--        android:layout_marginTop="20sp"-->
+
+<!--        />-->
+
+
+
+</LinearLayout>

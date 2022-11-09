@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:icon="@drawable/share"
+        android:title="Share"
+        app:showAsAction="never">
+        <menu>
+            <item android:title="Facebook"
+                android:icon="@drawable/ic_facebook_logo"/>
+            <item android:title="Instagram"
+                android:icon="@drawable/ic_ins_logo"/>
+        </menu>
+    </item>
+    <item
+        android:icon="@drawable/remove"
+        android:title="Delete" />
+
+<!--    <item-->
+<!--        android:id="@+id/app_bar_search"-->
+<!--        android:icon="@drawable/search"-->
+<!--        android:title="Search"-->
+<!--        app:showAsAction="always"-->
+<!--        app:actionViewClass="android.widget.SearchView"/>-->
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/dangxuat"
+        android:title="Log out"
+        app:showAsAction="never" />
+
+<!--    <item-->
+<!--        android:id="@+id/shopping"-->
+<!--        android:icon="@drawable/shopping"-->
+<!--        android:title="Settings"-->
+<!--        app:showAsAction="always" />-->
+
+</menu>

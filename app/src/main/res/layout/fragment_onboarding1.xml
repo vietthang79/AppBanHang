@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:alpha="0.9"
+    android:background="@drawable/mikencoview"
+
+    >
+
+<ImageView
+    android:layout_width="180dp"
+    android:layout_height="180dp"
+    android:layout_marginTop="-70dp"
+    android:src="@drawable/mikenco"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MIKENCO"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#DA4415"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ZIP POLO WHITE
+SUMMER VACATION "
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#DA4415"
+        android:layout_marginTop="20sp"
+
+        />
+
+
+
+</LinearLayout>

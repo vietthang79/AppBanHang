@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">COFFEE</string>
+    <string name="name_app">Coffee Managers</string>
+    <string name="we_will_send_you_an_one_time_password_on_this_mobie_number">We will send you an One Time Password on this mobie number</string>
+    <string name="otp_verication">OTP_VERICATION</string>
+    <string name="get_otp">Get otp</string>
+    <string name="enter_the_otp_sent_to">Enter the OTP sent to</string>
+    <string name="confirm_otp">confirm_otp</string>
+    <string name="confirmotp">confirm otp</string>
+    <string name="title_activity_navigation_activiti">Navigation_Activiti</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Trang chủ</string>
+    <string name="menu_thongbao">Thông báo</string>
+    <string name="menu_tienich">Tiện ích</string>
+    <string name="menu_list">Danh mục</string>
+    <string name="menu_nguoidung">Người dùng</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_navigation_drawer">Navigation_Drawer</string>
+
+    <!--    <string name="key_google_maps">AIzaSyC57nOYybRyz4TRknTBg59YBs6Sstp4UbA</string>-->
+    <string name="key_google_maps">AIzaSyB1_fECTKVmvJGBNvQkMBtMO-Drc0JavXs</string>
+
+
+</resources>

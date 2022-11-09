@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SignUp"
+    android:fillViewport="true"
+    android:background="#DFD3C3"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/radius_background"
+            android:layout_marginBottom="360dp">
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="110dp"
+                android:src="@drawable/sales" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/edtUsernameLG"
+            android:layout_width="360dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/radius"
+            android:ems="10"
+            android:padding="20dp"
+            android:hint="Enter your username"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/username"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewUsername" />
+
+
+        <TextView
+            android:id="@+id/txtViewUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="125dp"
+            android:text="Username"
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtViewError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:textColor="#FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtUsernameLG" />
+
+
+
+        <EditText
+            android:id="@+id/edtPasswordLG"
+            android:layout_width="354dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/radius"
+            android:ems="10"
+            android:hint="Enter your password"
+            android:inputType="textPassword"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/pass"
+            android:outlineSpotShadowColor="@color/black"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewPassword" />
+        <TextView
+            android:id="@+id/txtViewPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="4dp"
+            android:text="Password"
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewError" />
+
+        <TextView
+            android:id="@+id/txtViewErrorr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:textColor="#FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPasswordLG" />
+
+        <TextView
+            android:id="@+id/txtViewPassword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="4dp"
+            android:text="Email
+    "
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewErrorr" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="354dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/radius"
+            android:ems="10"
+            android:hint="Enter your Email"
+            android:inputType="textEmailAddress"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/email"
+            android:outlineSpotShadowColor="@color/black"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewPassword2" />
+
+        <TextView
+            android:id="@+id/txtViewErrorrr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:textColor="#FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+        <TextView
+            android:id="@+id/txtViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="4dp"
+            android:text="Date of birth"
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewErrorrr" />
+
+        <EditText
+            android:id="@+id/edtDate"
+            android:layout_width="267dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/radius"
+            android:ems="10"
+            android:hint="Enter your date of birth"
+            android:inputType="date|datetime"
+            android:padding="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewDate" />
+
+        <TextView
+            android:id="@+id/txtViewErrorrrr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:textColor="#FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtDate" />
+
+        <TextView
+            android:id="@+id/txtViewSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text="Sex"
+            android:textColor="#000"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewErrorrrr" />
+
+        <RadioGroup
+            android:id="@+id/GroupGioiTinh"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewSex">
+
+            <RadioButton
+                android:id="@+id/radioBtnNam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:checked="false"
+                android:text="Male"
+                android:textColor="#898251"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/radioBtnNu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:checked="false"
+                android:text="Female"
+                android:textColor="#898251"
+                android:textSize="20dp" />
+
+            <!-- android:checked="true"  trạng thái tự chọn mặc định-->
+        </RadioGroup>
+
+        <!--    <LinearLayout-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        tools:ignore="MissingConstraints">-->
+
+        <!--        <com.spark.submitbutton.SubmitButton-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:text="Submit"-->
+        <!--            app:sub_btn_background="@color/white"-->
+        <!--            app:sub_btn_duration="3000"-->
+        <!--            app:sub_btn_line_color="@color/green"-->
+        <!--            app:sub_btn_ripple_color="@color/green"-->
+        <!--            app:sub_btn_tick_color="@color/white"-->
+        <!--            tools:ignore="MissingClass" />-->
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#87805E"
+            android:text="Sign Up"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GroupGioiTinh" />
+        <!--    </LinearLayout>-->
+
+        <ImageView
+            android:id="@+id/ImgBtnDate"
+            android:layout_width="57dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="52dp"
+            app:layout_constraintStart_toEndOf="@+id/edtDate"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail"
+            app:srcCompat="@drawable/calendar" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="48dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="-6dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="-2dp"
+            app:layout_constraintBottom_toTopOf="@+id/GroupGioiTinh"
+            app:layout_constraintStart_toEndOf="@+id/txtViewSex"
+            app:layout_constraintTop_toBottomOf="@+id/edtDate"
+            app:srcCompat="@drawable/sex" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
