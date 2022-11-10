@@ -206,6 +206,7 @@ public class ChiTietActivity extends AppCompatActivity {
             badge.setText(String.valueOf(totalItem));
         }
     }
+
 //
     @Override
     protected void onResume(){
