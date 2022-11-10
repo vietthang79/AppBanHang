@@ -207,7 +207,7 @@ public class ChiTietActivity extends AppCompatActivity {
         }
     }
 
-//lll
+//aaa
     @Override
     protected void onResume(){
         super.onResume();
