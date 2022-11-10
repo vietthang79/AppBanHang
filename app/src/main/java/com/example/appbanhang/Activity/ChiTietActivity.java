@@ -219,7 +219,7 @@ public class ChiTietActivity extends AppCompatActivity {
             badge.setText(String.valueOf(totalItem));
         }
     }
-    //aaaaa sdfsdfds
+    //aaaaa sdfsdfds sfsfsfs
     //check_connected
     @Override
     protected void onStart() {
