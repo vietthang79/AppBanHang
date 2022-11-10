@@ -2,12 +2,15 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="8dp"
-    app:cardCornerRadius="4dp"
+    app:cardCornerRadius="12dp"
     android:layout_margin="5dp"
+    app:cardElevation="12dp"
+    android:backgroundTint="#F0EBCE"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <LinearLayout
+
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="140dp"
@@ -22,101 +25,135 @@
             android:layout_marginStart="10dp"
             android:layout_height="match_parent"/>
 
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        >
+
         <LinearLayout
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:paddingRight="20dp"
+            android:orientation="horizontal"
             >
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/item_giohang_tensp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/item_giohang_tensp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="40dp"
-                    android:text="ten san pham"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                android:text="ten san pham"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
-            </LinearLayout>
+        </LinearLayout>
 
 
 
-            <LinearLayout
-                android:weightSum="18"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-<!--                <TextView-->
-<!--                    android:layout_weight="5"-->
-<!--                    android:id="@+id/item_giohang_gia"-->
-<!--                    android:text="15000"-->
+        <LinearLayout
+            android:weightSum="18"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-<!--                    android:layout_marginLeft="10dp"-->
-<!--                    android:textColor="#911B1B"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="wrap_content"/>-->
-                <ImageView
-                    android:src="@drawable/ic_baseline_remove_24"
-                    android:id="@+id/item_giohang_tru"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/item_giohang_soluong"
-                    android:text="1"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-
-                <ImageView
-                    android:layout_weight="2"
-                    android:src="@drawable/ic_baseline_add_24"
-                    android:id="@+id/item_giohang_cong"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <ImageView
-                    android:layout_weight="2"
-                    android:src="@drawable/ic_baseline_drag_handle_24"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/item_giohang_giasp2"
-                    android:text="2500 D"
-                    android:textStyle="bold"
-                    android:layout_weight="5"
-                    android:gravity="center|center_vertical"
-                    android:textColor="#911B1B"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/item_giohang_giasp2"
+                android:text="2500 D"
+                android:textStyle="bold"
+                android:layout_weight="10"
+                android:gravity="center|center_horizontal"
+                android:textColor="#911B1B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
 
 
-            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-5dp"
+            android:layout_marginTop="10dp">
+
 
             <CheckBox
                 android:id="@+id/item_giohang_check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:layout_marginTop="-50dp"
-                android:layout_marginLeft="60dp"
+
                 />
 
         </LinearLayout>
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:backgroundTint="#F0EBCE"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="200dp"
+    android:layout_marginTop="-90dp"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="55dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill"
+        android:backgroundTint="#FDF6EC"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/item_giohang_cong"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/plus" />
+
+            <TextView
+                android:id="@+id/item_giohang_soluong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="1"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/item_giohang_tru"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="2dp"
+                android:src="@drawable/download" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
 
 
 </androidx.cardview.widget.CardView>

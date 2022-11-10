@@ -115,9 +115,7 @@
         <activity
             android:name=".Activity.ThanhToanActivity"
             android:exported="false" />
-        <activity
-            android:name=".Activity.OnboardingActivity"
-            android:exported="true" />
+
         <activity
             android:name=".Activity.DangKiActivity"
             android:exported="true" />
@@ -126,7 +124,9 @@
             android:exported="true" />
         <activity
             android:name=".Activity.GioHangActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".Activity.ChiTietActivity"
             android:exported="true" >

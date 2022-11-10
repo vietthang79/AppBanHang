@@ -140,14 +140,12 @@ public class ChiTietActivity extends AppCompatActivity {
         tensp.setText(sanPhamMoi.getTensp());
         mota.setText(sanPhamMoi.getMota());
 //        Glide.with(getApplicationContext()).load(sanPhamMoi.getHinhanh()).into(imghinhanh);
-
         if (sanPhamMoi.getHinhanh().contains("http")) {
             Glide.with(getApplicationContext()).load(sanPhamMoi.getHinhanh()).into(imghinhanh);
         }else{
             String hinh = Utils.BASE_URL+"images/"+sanPhamMoi.getHinhanh();
             Glide.with(getApplicationContext()).load(hinh).into(imghinhanh);
         }
-
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         giasp.setText("Gia :"+decimalFormat.format(Double.parseDouble(sanPhamMoi.getGiasp())) + "D");
         Integer[] so = new Integer[]{1,2,3,4,5,6,7,8,9,10};

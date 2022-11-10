@@ -33,7 +33,7 @@ import java.util.List;
 
 public class GioHangActivity extends AppCompatActivity {
 
-    TextView giohangtrong, tongtien;
+    TextView giohangtrong, tongtien, tientungsp;
     Toolbar toolbar;
     RecyclerView recyclerView;
     Button btnmuahang;
@@ -49,6 +49,16 @@ public class GioHangActivity extends AppCompatActivity {
         initView();
         initControl();
         tinhTongTien();
+        tinhTongTienTungSP();
+    }
+
+    private void tinhTongTienTungSP() {
+        tongtiensp = 0;
+        for (int i = 0 ; i<Utils.mangmuahang.size(); i++){
+            tongtiensp = tongtiensp + Utils.mangmuahang.get(i).getGiasp();
+        }
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        tientungsp.setText(decimalFormat.format(tongtiensp));
     }
 
     private void tinhTongTien() {
@@ -58,8 +68,6 @@ public class GioHangActivity extends AppCompatActivity {
         }
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         tongtien.setText(decimalFormat.format(tongtiensp));
-
-
     }
 
      private void initControl() {
@@ -109,6 +117,7 @@ public class GioHangActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toobar);
         recyclerView = findViewById(R.id.recycleviewgiohang);
         btnmuahang = findViewById(R.id.btnmuahang);
+        tientungsp = findViewById(R.id.tien1SP);
     }
 
     //check_connected

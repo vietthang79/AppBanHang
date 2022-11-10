@@ -215,7 +215,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getSpMoi() {
-        compositeDisposable.add(apiBanHang.getSpMoi()
+        for (int i = 0; i < 7; ++i){
+
+            compositeDisposable.add(apiBanHang.getSpMoi()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
@@ -231,6 +233,8 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                 ));
+        }
+
     }
 
     private void Anhxa() {
@@ -251,8 +255,25 @@ public class MainActivity extends AppCompatActivity {
         imgbtn_kem = findViewById(R.id.home_vi);
         imgbtn_food = findViewById(R.id.home_btn_food);
         search = findViewById(R.id.home_search);
+        if (Utils.manggiohang == null){
+            Utils.manggiohang = new ArrayList<>();
+        }else{
+            int totalItem = 0;
+            for (int i =0; i<Utils.manggiohang.size(); i++){
+                totalItem = totalItem+Utils.manggiohang.get(i).getSpluong();
+            }
+//            badge.setText(String.valueOf(totalItem));
+        }
 
-
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int totalItem = 0;
+        for (int i =0; i<Utils.manggiohang.size(); i++){
+            totalItem = totalItem+Utils.manggiohang.get(i).getSpluong();
+        }
+//        badge.setText(String.valueOf(totalItem));
     }
 
     private boolean isConnected(Context context){

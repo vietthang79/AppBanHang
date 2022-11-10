@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EEE3CB"
     tools:context=".Activity.ChiTietActivity">
 
 
@@ -94,13 +95,17 @@
 
                 <Button
                     android:id="@+id/themvaogiohang"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_gravity="center"
+                    android:layout_marginStart="40dp"
+                    android:gravity="center"
+                    android:layout_marginEnd="40dp"
                     android:layout_marginTop="5dp"
-                    android:backgroundTint="#FD4949"
+                    android:textStyle="bold"
+                    android:textSize="17dp"
+                    android:background="@drawable/border7"
                     android:text="Add to cart"
-                    android:textColor="#E6E0E0" />
+                    android:textColor="#3E3E3E" />
 
             </LinearLayout>
 
