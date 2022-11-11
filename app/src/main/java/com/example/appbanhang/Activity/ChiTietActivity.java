@@ -231,7 +231,7 @@ public class ChiTietActivity extends AppCompatActivity {
             badge.setText(String.valueOf(totalItem));
         }
     }
-
+//lll
     //check_connected
     @Override
     protected void onStart() {
