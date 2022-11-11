@@ -138,7 +138,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        });
 //        xemthemYeuThich = root.findViewById(R.id.home_daxem_xemthem);
 //        xemthemNoiBat = root.findViewById(R.id.home_noibat_xemthem);
-        xemthemDanhmuc = root.findViewById(R.id.home_danhmuc_xemthem);
+//        xemthemDanhmuc = root.findViewById(R.id.home_danhmuc_xemthem);
         search = root.findViewById(R.id.home_search);
 //        swipeRefreshLayout = root.findViewById(R.id.refreshLayout);
         dienThoai = root.findViewById(R.id.btn_dienthoai);

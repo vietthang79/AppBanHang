@@ -35,6 +35,9 @@
             android:name=".Activity.Drink_Beer"
             android:exported="false" />
         <activity
+            android:name=".Activity.TatCaActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Food"
             android:exported="false" />
         <!--

@@ -65,7 +65,7 @@ public class FoodAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             myViewHolder.tensp.setText(sanPham.getTensp().trim());
             DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
             myViewHolder.giasp.setText("Gia :"+decimalFormat.format(Double.parseDouble(sanPham.getGiasp())) + "D");
-            myViewHolder.mota.setText(sanPham.getMota());
+//            myViewHolder.mota.setText(sanPham.getMota());
 //            Glide.with(context).load(sanPham.getHinhanh()).into(myViewHolder.hinhanh);
 //            myViewHolder.idsp.setText(sanPham.getId()+"");
 

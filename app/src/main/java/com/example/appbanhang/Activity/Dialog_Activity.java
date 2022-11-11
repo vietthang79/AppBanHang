@@ -12,6 +12,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -25,10 +27,13 @@ public class Dialog_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog);
         Button btnOpendialogButtom=findViewById(R.id.btn_open_dialog_bottom);
+        Animation animation = AnimationUtils.loadAnimation(getBaseContext(),R.anim.btn_toup);
+        btnOpendialogButtom.setAnimation(animation);
+
         btnOpendialogButtom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openNameDialog(Gravity.BOTTOM);
+                openNameDialog(Gravity.CENTER_VERTICAL);
             }
         });
     }
@@ -68,6 +73,8 @@ public class Dialog_Activity extends AppCompatActivity {
                         editTextname.setError("Vui lòng nhập tên của bạn");
                 }else {
                     Intent intent=new Intent(getBaseContext(),MainActivity.class);
+                    String ten = editTextname.getText().toString();
+                    intent.putExtra("tenkhachhang", ten);
                     startActivity(intent);
                 }
                 return;

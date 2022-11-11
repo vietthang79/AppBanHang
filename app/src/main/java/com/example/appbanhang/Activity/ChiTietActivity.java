@@ -184,6 +184,9 @@ public class ChiTietActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent giohang = new Intent(getApplicationContext(), GioHangActivity.class);
+                String giaSP = giasp.getText().toString();
+                giohang.putExtra("giatien", giaSP);
+                Log.i("test", "da chuyen");
                 //----------------------------------------------- Handel sự kiện WAITTING -------------------------------------------------------//
 
                 ProgressDialog progressDialog = ProgressDialog.show(ChiTietActivity.this,

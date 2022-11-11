@@ -62,26 +62,6 @@ public class DienThoai extends AppCompatActivity {
         addEventLoad();
     }
 
-    private void addEventLoad() {
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                if (isLoading == false){
-                    if (linearLayoutManager.findFirstCompletelyVisibleItemPosition() == sanPhamMoiList.size()-1){
-                        isLoading = true;
-                        loadMore();
-                    }
-                }
-            }
-        });
-    }
-
     private void loadMore() {
         handler.post(new Runnable() {
             @Override
@@ -101,6 +81,26 @@ public class DienThoai extends AppCompatActivity {
                 isLoading = false;
             }
         }, 2000);
+    }
+
+    private void addEventLoad() {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (isLoading == false){
+                    if (linearLayoutManager.findFirstCompletelyVisibleItemPosition() == sanPhamMoiList.size()-1){
+                        isLoading = true;
+                        loadMore();
+                    }
+                }
+            }
+        });
     }
 
     private void  getData(int page) {

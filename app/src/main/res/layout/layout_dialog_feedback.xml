@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_white"
     android:orientation="vertical"
-    android:layout_margin="16dp">
+    android:padding="20dp">
     <TextView
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
@@ -28,13 +28,15 @@
     android:layout_height="wrap_content"
     android:text="Vui lòng nhập tên của bạn"
     android:textAlignment="center"
+    android:layout_marginTop="10dp"
     android:textSize="15dp" />
     <EditText
         android:id="@+id/edt_name"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Tên của bạn"
+
         android:background="@drawable/bg_edittext"
         android:padding="12dp"
         />
@@ -42,6 +44,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
         <Button
             android:id="@+id/btn_no"

@@ -36,7 +36,7 @@ public class GioHangActivity extends AppCompatActivity {
     TextView giohangtrong, tongtien, tientungsp;
     Toolbar toolbar;
     RecyclerView recyclerView;
-    Button btnmuahang;
+    Button btnmuahang,btnchat;
     GioHangAdapter adapter;
     long tongtiensp ;
 
@@ -49,17 +49,17 @@ public class GioHangActivity extends AppCompatActivity {
         initView();
         initControl();
         tinhTongTien();
-        tinhTongTienTungSP();
+//        tinhTongTienTungSP();
     }
 
-    private void tinhTongTienTungSP() {
-        tongtiensp = 0;
-        for (int i = 0 ; i<Utils.mangmuahang.size(); i++){
-            tongtiensp = tongtiensp + Utils.mangmuahang.get(i).getGiasp();
-        }
-        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        tientungsp.setText(decimalFormat.format(tongtiensp));
-    }
+//    private void tinhTongTienTungSP() {
+//        tongtiensp = 0;
+//        for (int i = 0 ; i<Utils.mangmuahang.size(); i++){
+//            tongtiensp = tongtiensp + Utils.mangmuahang.get(i).getGiasp();
+//        }
+//        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+//        tientungsp.setText(decimalFormat.format(tongtiensp));
+//    }
 
     private void tinhTongTien() {
          tongtiensp = 0;
@@ -118,6 +118,11 @@ public class GioHangActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycleviewgiohang);
         btnmuahang = findViewById(R.id.btnmuahang);
         tientungsp = findViewById(R.id.tien1SP);
+        btnchat = findViewById(R.id.btn_chat);
+
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        long tongtien = getIntent().getLongExtra("giatien", 0);
+        tientungsp.setText(decimalFormat.format(tongtien));
     }
 
     //check_connected

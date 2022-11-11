@@ -25,12 +25,12 @@ import org.greenrobot.eventbus.EventBus;
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.MyViewHolder> {
+public class XemThemAdapter extends RecyclerView.Adapter<XemThemAdapter.MyViewHolder> {
 
     Context context;
     List<SanPhamMoi> array;
 
-    public SanPhamMoiAdapter(Context context, List<SanPhamMoi> array) {
+    public XemThemAdapter(Context context, List<SanPhamMoi> array) {
         this.context = context;
         this.array = array;
     }
@@ -74,7 +74,7 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
 
     @Override
     public int getItemCount() {
-        return 6;
+        return array.size();
     }
 
 

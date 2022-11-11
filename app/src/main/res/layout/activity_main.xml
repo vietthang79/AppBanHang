@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
 
-//kjkjojojj
+
 
     <LinearLayout
         android:id="@+id/home_fragment"
@@ -29,13 +29,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/milkshake"
                 android:text="@string/name_app"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/milkshake"
+                    android:text="Hi, "
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_TenUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/milkshake"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/home_search"
@@ -411,7 +438,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/home_danhmuc_xemthem"
+                        android:id="@+id/home_xemthem"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="11dp"
@@ -483,242 +510,244 @@
                         android:orientation="horizontal" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/white"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="690dp"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:background="@color/black"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:id="@+id/home_dienthoai"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Coffee"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/home_dienthoai"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:text="Coffee"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="230dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="15dp"
-                        app:cardCornerRadius="10dp">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:layout_marginStart="15dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginEnd="15dp"-->
+<!--                        app:cardCornerRadius="10dp">-->
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="230dp"
-                            android:background="@drawable/cf_sale" />
-                    </androidx.cardview.widget.CardView>
+<!--                        <ImageView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="230dp"-->
+<!--                            android:background="@drawable/cf_sale" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recycleview_dienthoai"
-                        android:layout_width="wrap_content"
-                        android:layout_height="180dp"
-                        android:orientation="horizontal" />
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/recycleview_cf"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_marginTop="25dp"-->
+<!--                        android:layout_height="330dp"-->
+<!--                        android:orientation="horizontal" />-->
 
-                    <Button
-                        android:id="@+id/btn_dienthoai"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:background="@drawable/button_selector2"
-                        android:text="Xem thêm"
-                        android:textColor="#384BB5"
-                        android:textSize="16sp" />
-                </LinearLayout>
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_dienthoai"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/button_selector2"-->
+<!--                        android:text="Xem thêm"-->
+<!--                        android:layout_marginTop="17dp"-->
+<!--                        android:textColor="#384BB5"-->
+<!--                        android:textSize="16sp" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/white"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Trà sữa"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:text="Trà sữa"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="190dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="15dp"
-                        app:cardCornerRadius="10dp">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="190dp"-->
+<!--                        android:layout_marginStart="15dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginEnd="15dp"-->
+<!--                        app:cardCornerRadius="10dp">-->
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="190dp"
-                            android:background="@drawable/milktea_sale_banner" />
-                    </androidx.cardview.widget.CardView>
+<!--                        <ImageView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="190dp"-->
+<!--                            android:background="@drawable/milktea_sale_banner" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView_home_quanao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="180dp"
-                        android:orientation="horizontal" />
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/recyclerView_home_quanao"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="180dp"-->
+<!--                        android:orientation="horizontal" />-->
 
-                    <Button
-                        android:id="@+id/btn_thoitrang"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:background="@drawable/button_selector2"
-                        android:text="Xem thêm"
-                        android:textColor="#384BB5"
-                        android:textSize="16sp" />
-                </LinearLayout>
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_thoitrang"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="45dp"-->
+<!--                        android:background="@drawable/button_selector2"-->
+<!--                        android:text="Xem thêm"-->
+<!--                        android:textColor="#384BB5"-->
+<!--                        android:textSize="16sp" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/white"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Thuốc lá"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:text="Thuốc lá"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="15dp"
-                        app:cardCornerRadius="10dp">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:layout_marginStart="15dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginEnd="15dp"-->
+<!--                        app:cardCornerRadius="10dp">-->
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                            android:background="@drawable/cigarette_banner" />
-                    </androidx.cardview.widget.CardView>
+<!--                        <ImageView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="200dp"-->
+<!--                            android:background="@drawable/cigarette_banner" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView_home_nhacua"
-                        android:layout_width="wrap_content"
-                        android:layout_height="180dp"
-                        android:orientation="horizontal" />
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/recyclerView_home_nhacua"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="180dp"-->
+<!--                        android:orientation="horizontal" />-->
 
-                    <Button
-                        android:id="@+id/btn_nhacua"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:background="@drawable/button_selector2"
-                        android:text="Xem thêm"
-                        android:textColor="#384BB5"
-                        android:textSize="16sp" />
-                </LinearLayout>
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_nhacua"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="45dp"-->
+<!--                        android:background="@drawable/button_selector2"-->
+<!--                        android:text="Xem thêm"-->
+<!--                        android:textColor="#384BB5"-->
+<!--                        android:textSize="16sp" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/white"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Kem mát lạnh"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:text="Kem mát lạnh"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="185dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="15dp"
-                        app:cardCornerRadius="10dp">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="185dp"-->
+<!--                        android:layout_marginStart="15dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginEnd="15dp"-->
+<!--                        app:cardCornerRadius="10dp">-->
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="185dp"
-                            android:background="@drawable/cream_sales" />
-                    </androidx.cardview.widget.CardView>
+<!--                        <ImageView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="185dp"-->
+<!--                            android:background="@drawable/cream_sales" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView_home_lamdep"
-                        android:layout_width="wrap_content"
-                        android:layout_height="180dp"
-                        android:orientation="horizontal" />
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/recyclerView_home_lamdep"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="180dp"-->
+<!--                        android:orientation="horizontal" />-->
 
-                    <Button
-                        android:id="@+id/btn_lamdep"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:background="@drawable/button_selector2"
-                        android:text="Xem thêm"
-                        android:textColor="#384BB5"
-                        android:textSize="16sp" />
-                </LinearLayout>
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_lamdep"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="45dp"-->
+<!--                        android:background="@drawable/button_selector2"-->
+<!--                        android:text="Xem thêm"-->
+<!--                        android:textColor="#384BB5"-->
+<!--                        android:textSize="16sp" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="70dp"
-                    android:background="@color/white"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:layout_marginBottom="70dp"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Đồ ăn nhanh"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:text="Đồ ăn nhanh"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="185dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="15dp"
-                        app:cardCornerRadius="10dp">
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="185dp"-->
+<!--                        android:layout_marginStart="15dp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginEnd="15dp"-->
+<!--                        app:cardCornerRadius="10dp">-->
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="185dp"
-                            android:background="@drawable/food_sales" />
-                    </androidx.cardview.widget.CardView>
+<!--                        <ImageView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="185dp"-->
+<!--                            android:background="@drawable/food_sales" />-->
+<!--                    </androidx.cardview.widget.CardView>-->
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView_home_sach"
-                        android:layout_width="wrap_content"
-                        android:layout_height="180dp"
-                        android:orientation="horizontal" />
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/recyclerView_home_sach"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="180dp"-->
+<!--                        android:orientation="horizontal" />-->
 
-                    <Button
-                        android:id="@+id/btn_sach"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:background="@drawable/button_selector2"
-                        android:text="Xem thêm"
-                        android:textColor="#384BB5"
-                        android:textSize="16sp" />
-                </LinearLayout>
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_sach"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="45dp"-->
+<!--                        android:background="@drawable/button_selector2"-->
+<!--                        android:text="Xem thêm"-->
+<!--                        android:textColor="#384BB5"-->
+<!--                        android:textSize="16sp" />-->
+<!--                </LinearLayout>-->
             </LinearLayout>
 
 

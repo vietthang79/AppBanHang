@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -21,6 +22,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -31,10 +33,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
+import com.example.appbanhang.Adapter.DienThoaiAdapter;
 import com.example.appbanhang.Adapter.LoaiSpAdapter;
 import com.example.appbanhang.Adapter.SanPhamMoiAdapter;
 import com.example.appbanhang.Adapter.ViewPagerAdapter;
@@ -63,12 +67,20 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
-
+    LinearLayoutManager linearLayoutManager;
+    Handler handler = new Handler();
+    boolean isLoading = false;
+    int page = 1;
+    int loai;
+    DienThoaiAdapter adapterDt;
+    TextView xemthem,tenuser;
+    RecyclerView recyclerView;
     RecyclerView recyclerViewManHinhChinh;
     BottomNavigationView bottomNav;
     List<LoaiSp> mangloaisp;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     ApiBanHang apiBanHang;
+    List<SanPhamMoi> sanPhamMoiList;
     List<SanPhamMoi> mangSpMoi;
     SanPhamMoiAdapter spAdapter;
     NotificationBadge badge;
@@ -97,10 +109,80 @@ public class MainActivity extends AppCompatActivity {
             setViewPager();
             getSpMoi();
             getEventClick();
-
+            getData();
+//            addEventLoad();
         }else{
             Toast.makeText(getApplicationContext(),"Không có internet, vui lòng kết nối", Toast.LENGTH_SHORT).show();
         }
+    }
+//    private void loadMore() {
+//        handler.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                mangSpMoi.add(null);
+//                adapterDt.notifyItemInserted(mangSpMoi.size()-1);
+//            }
+//        });
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                mangSpMoi.remove(mangSpMoi.size()-1);
+//                adapterDt.notifyItemRemoved(mangSpMoi.size());
+//                page = page +1;
+//                getData();
+//                adapterDt.notifyDataSetChanged();
+//                isLoading = false;
+//            }
+//        }, 2000);
+//    }
+//
+//    private void addEventLoad() {
+//        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//            }
+//
+//            @Override
+//            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//                if (isLoading == false){
+//                    if (linearLayoutManager.findFirstCompletelyVisibleItemPosition() == mangSpMoi.size()-1){
+//                        isLoading = true;
+//                        loadMore();
+//                    }
+//                }
+//            }
+//        });
+//    }
+    private void getData() {
+        compositeDisposable.add(apiBanHang.getSanPham(page, loai)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        sanPhamMoiModel -> {
+                                Log.d("loggg", sanPhamMoiModel.getResult().size() + "....");
+                                if (adapterDt == null){
+                                    mangSpMoi = sanPhamMoiModel.getResult();
+                                    adapterDt = new DienThoaiAdapter(getApplicationContext(), mangSpMoi);
+                                    recyclerView.setAdapter(adapterDt);
+                                }else{
+                                    int vitri = mangSpMoi.size()-1;
+                                    int soluongadd = sanPhamMoiModel.getResult().size();
+                                    for (int i = 0; i<soluongadd; i++){
+                                        mangSpMoi.add(sanPhamMoiModel.getResult().get(i));
+                                    }
+                                    adapterDt.notifyItemRangeInserted(vitri, soluongadd);
+                                }
+
+
+
+                        },
+                        throwable -> {
+                            Toast.makeText(getApplicationContext(),"Không thể kết nối sever", Toast.LENGTH_SHORT).show();
+                        }
+
+                ));
     }
 
     private void ChuyenTrang() {
@@ -167,6 +249,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //xemthem
+        xemthem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TatCaActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void getEventClick() {
@@ -215,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getSpMoi() {
-        for (int i = 0; i < 7; ++i){
+
 
             compositeDisposable.add(apiBanHang.getSpMoi()
                 .subscribeOn(Schedulers.io())
@@ -233,12 +324,19 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                 ));
-        }
+
 
     }
 
     private void Anhxa() {
 
+//        recyclerView = findViewById(R.id.recycleview_cf);
+//        linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//        recyclerView.setHasFixedSize(true);
+//        sanPhamMoiList = new ArrayList<>();
+        tenuser = findViewById(R.id.txt_TenUser);
+        xemthem = findViewById(R.id.home_xemthem);
         recyclerViewManHinhChinh = findViewById(R.id.recycleview);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerViewManHinhChinh.setLayoutManager(layoutManager);
@@ -255,6 +353,10 @@ public class MainActivity extends AppCompatActivity {
         imgbtn_kem = findViewById(R.id.home_vi);
         imgbtn_food = findViewById(R.id.home_btn_food);
         search = findViewById(R.id.home_search);
+
+        Intent intent = getIntent();
+        tenuser.setText(intent.getStringExtra("tenkhachhang"));
+
         if (Utils.manggiohang == null){
             Utils.manggiohang = new ArrayList<>();
         }else{
