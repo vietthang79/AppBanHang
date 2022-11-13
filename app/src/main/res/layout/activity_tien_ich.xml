@@ -4,167 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
+    android:orientation="vertical"
     tools:context=".Activity.TienIch_Activity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toobar_TienIch"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#EDDFB3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="UTILITIES" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="60dp"
-            android:text="Dark Mode" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="35dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="66dp"
-                android:layout_height="67dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="15dp"
-                android:outlineSpotShadowColor="@color/text_color"
-                android:src="@drawable/wifi" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="30dp"
-                android:text="Check_Connect"
-                android:textColor="@color/text_color"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/img_go"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="-265dp"
-                android:layout_marginTop="100dp"
-                android:src="@drawable/ic_baseline_arrow_forward_24" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="35dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="66dp"
-                android:layout_height="67dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/ic_baseline_phone_24" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="30dp"
-                android:text="Content_Provider"
-                android:textColor="#333333"
-                android:textSize="22dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/img_go1"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="-265dp"
-                android:layout_marginTop="100dp"
-                android:src="@drawable/ic_baseline_arrow_forward_24" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="35dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="66dp"
-                android:layout_height="67dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/www" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="30dp"
-                android:text="Web_View"
-                android:textColor="#333333"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/img_go2"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="-200dp"
-                android:layout_marginTop="100dp"
-                android:src="@drawable/ic_baseline_arrow_forward_24" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="66dp"
-                android:layout_height="67dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/ic_baseline_add_location_24" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="30dp"
-                android:text="See your location"
-                android:textColor="#333333"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/img_go3"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="-280dp"
-                android:layout_marginTop="100dp"
-                android:src="@drawable/ic_baseline_arrow_forward_24" />
-        </LinearLayout>
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_nav"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#FFFFFF"
-            app:menu="@menu/activity_main_drawer" />
-    </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/activity_main_drawer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

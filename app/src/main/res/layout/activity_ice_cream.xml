@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Đồ ăn vặt"
+        android:text="Kem"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
@@ -34,6 +34,6 @@
         android:layout_height="640dp"
         android:layout_marginTop="25dp"
         android:layout_marginStart="5dp"
-        />
+         />
 
 </LinearLayout>

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -34,6 +35,7 @@ import java.util.List;
 public class GioHangActivity extends AppCompatActivity {
 
     TextView giohangtrong, tongtien, tientungsp;
+    ImageView img_giohangtrong;
     Toolbar toolbar;
     RecyclerView recyclerView;
     Button btnmuahang,btnchat;
@@ -84,6 +86,7 @@ public class GioHangActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         if (Utils.manggiohang.size() == 0){
             giohangtrong.setVisibility(View.VISIBLE);
+            img_giohangtrong.setVisibility(View.VISIBLE);
         }else{
             adapter = new GioHangAdapter(getApplicationContext(), Utils.manggiohang);
             recyclerView.setAdapter(adapter);
@@ -113,6 +116,7 @@ public class GioHangActivity extends AppCompatActivity {
 
     private void initView() {
         giohangtrong = findViewById(R.id.txtgiohangtrong);
+        img_giohangtrong = findViewById(R.id.img_giohangtrong);
         tongtien = findViewById(R.id.txttongtien);
         toolbar = findViewById(R.id.toobar);
         recyclerView = findViewById(R.id.recycleviewgiohang);

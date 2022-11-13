@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.TienIch_Activity">
+
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:id="@+id/toobar_TienIch"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="?attr/actionBarSize"-->
+    <!--        android:background="#EDDFB3"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:title="UTILITIES" />-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="231dp"
+        android:background="@drawable/bg_coffee">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+<androidx.cardview.widget.CardView
+    android:layout_width="99dp"
+    android:layout_height="96dp"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="45dp"
+    app:cardCornerRadius="250dp">
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="99dp"
+                android:layout_height="102dp"
+                tools:layout_editor_absoluteX="27dp"
+                android:src="@drawable/avatars"
+                tools:layout_editor_absoluteY="47dp" />
+</androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_username_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Ten "
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/lemon"
+                    android:text="nguyenvietthang5626@gmail.com"
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:background="@drawable/bg_profile"
+        android:alpha="0.7"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/person_profile" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/amita"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="180dp"
+                android:src="@drawable/next_profile" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorTextSecondary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/call_center" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Staff"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="14dp"
+                android:fontFamily="@font/amita"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="155dp"
+                android:src="@drawable/next_profile" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorTextSecondary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/cart" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Cart"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="14dp"
+                android:fontFamily="@font/amita"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="165dp"
+                android:src="@drawable/next_profile" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorTextSecondary"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/setting" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Setting"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="14dp"
+                android:fontFamily="@font/amita"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="175dp"
+                android:src="@drawable/next_profile" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorTextSecondary"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:menu="@menu/activity_main_drawer" />
+
+</LinearLayout>

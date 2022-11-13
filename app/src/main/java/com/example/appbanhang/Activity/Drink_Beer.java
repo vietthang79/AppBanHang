@@ -161,7 +161,6 @@ public class Drink_Beer extends AppCompatActivity {
     protected void onStart() {
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(networkChangeListener, filter);
-        FancyToast.makeText(Drink_Beer.this,"CONNECTION FAIL",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
         super.onStart();
     }
@@ -169,7 +168,6 @@ public class Drink_Beer extends AppCompatActivity {
     @Override
     protected void onStop() {
         unregisterReceiver(networkChangeListener);
-        FancyToast.makeText(Drink_Beer.this,"CONNECTION SUCCESS",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
         super.onStop();
     }
 }

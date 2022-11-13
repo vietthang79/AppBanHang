@@ -30,13 +30,10 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class TienIch_Activity extends AppCompatActivity {
 
-    Toolbar toolbar;
-    ImageView go,go1,go2,go3;
     NetworkChangeListener networkChangeListener = new NetworkChangeListener();
     BottomNavigationView bottomNav;
 
-    Switch Switch;
-    private SharedPreferences sharedPreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,17 +41,10 @@ public class TienIch_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_tien_ich);
 
         AnhXa();
-        ChuyenTrang();
-        ActionToolbar();
-        EventDarkMode();
         getEventClick();
-        //DarkMode
-
 
     }
     private void getEventClick() {
-
-
         bottomNav.setSelectedItemId(R.id.nav_tienich);
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -65,8 +55,12 @@ public class TienIch_Activity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.nav_tienich:
+                    case R.id.nav_nguoidung:
+                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
+                    case R.id.nav_tienich:
                         return true;
 
 
@@ -75,79 +69,12 @@ public class TienIch_Activity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
     }
 
 
-    private void EventDarkMode() {
 
-        Switch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            }
-        });
-
-    }
-
-    public void ActionToolbar(){
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-    }
-
-    private void ChuyenTrang() {
-        go.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TienIch_Activity.this, CheckConnect.class);
-                startActivity(intent);
-            }
-        });
-
-        go1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TienIch_Activity.this, ContentProvider.class);
-                startActivity(intent);
-            }
-        });
-
-        go2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TienIch_Activity.this, XML_Activity.class);
-                startActivity(intent);
-            }
-        });
-
-        go3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TienIch_Activity.this, GG_Maps.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     private void AnhXa() {
-        go = findViewById(R.id.img_go);
-        go1 = findViewById(R.id.img_go1);
-        go2 = findViewById(R.id.img_go2);
-        go3 = findViewById(R.id.img_go3);
-        toolbar = findViewById(R.id.toobar_TienIch);
-        Switch = findViewById(R.id.switch1);
         bottomNav = findViewById(R.id.bottom_nav);
 
 
@@ -157,7 +84,6 @@ public class TienIch_Activity extends AppCompatActivity {
     protected void onStart() {
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(networkChangeListener, filter);
-        FancyToast.makeText(TienIch_Activity.this,"CONNECTION FAIL",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
         super.onStart();
     }
@@ -165,7 +91,6 @@ public class TienIch_Activity extends AppCompatActivity {
     @Override
     protected void onStop() {
         unregisterReceiver(networkChangeListener);
-        FancyToast.makeText(TienIch_Activity.this,"CONNECTION SUCCESS",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
         super.onStop();
     }
 

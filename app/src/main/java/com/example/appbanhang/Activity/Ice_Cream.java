@@ -49,7 +49,7 @@ public class Ice_Cream extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dien_thoai);
+        setContentView(R.layout.activity_ice_cream);
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
 
         //coffee
@@ -126,7 +126,7 @@ public class Ice_Cream extends AppCompatActivity {
 
 
                             }else{
-                                Toast.makeText(getApplicationContext(), "Hết dữ liệu", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getApplicationContext(), "Hết dữ liệu", Toast.LENGTH_SHORT).show();
                                 isLoading = true;
                             }
                         },
@@ -167,7 +167,6 @@ public class Ice_Cream extends AppCompatActivity {
     protected void onStart() {
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(networkChangeListener, filter);
-        FancyToast.makeText(Ice_Cream.this,"CONNECTION FAIL",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
         super.onStart();
     }
@@ -175,7 +174,6 @@ public class Ice_Cream extends AppCompatActivity {
     @Override
     protected void onStop() {
         unregisterReceiver(networkChangeListener);
-        FancyToast.makeText(Ice_Cream.this,"CONNECTION SUCCESS",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
         super.onStop();
     }
 }

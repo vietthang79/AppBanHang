@@ -271,9 +271,12 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nav_tienich:
                         startActivity(new Intent(getApplicationContext(),TienIch_Activity.class));
+                        overridePendingTransition(3,3);
+                        return true;
+                    case R.id.nav_nguoidung:
+                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-
 
                 }
                 return false;

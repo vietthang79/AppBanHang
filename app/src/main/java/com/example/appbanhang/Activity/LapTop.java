@@ -48,7 +48,7 @@ public class LapTop extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dien_thoai);
+        setContentView(R.layout.activity_lap_top);
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         loai = getIntent().getIntExtra("loai", 4);
 
@@ -122,7 +122,7 @@ public class LapTop extends AppCompatActivity {
 
 
                             }else{
-                                Toast.makeText(getApplicationContext(), "Het du lieu", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getApplicationContext(), "Het du lieu", Toast.LENGTH_SHORT).show();
                                 isLoading = true;
                             }
                         },
@@ -163,7 +163,6 @@ public class LapTop extends AppCompatActivity {
     protected void onStart() {
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(networkChangeListener, filter);
-        FancyToast.makeText(LapTop.this,"CONNECTION FAIL",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
         super.onStart();
     }
@@ -171,7 +170,6 @@ public class LapTop extends AppCompatActivity {
     @Override
     protected void onStop() {
         unregisterReceiver(networkChangeListener);
-        FancyToast.makeText(LapTop.this,"CONNECTION SUCCESS",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
         super.onStop();
     }
 }

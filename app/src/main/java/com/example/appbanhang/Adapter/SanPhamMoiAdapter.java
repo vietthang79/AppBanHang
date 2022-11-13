@@ -74,7 +74,7 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
 
     @Override
     public int getItemCount() {
-        return 6;
+        return array.size();
     }
 
 

@@ -36,7 +36,7 @@ public class SendOTP_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_otp);
 
-        spinner = findViewById(R.id.spinner);
+//        spinner = findViewById(R.id.spinner);
         TextView error = findViewById(R.id.txterror);
         final EditText inputMobie = findViewById(R.id.inputMobie);
         btnGetOTP = findViewById(R.id.btnGetOTP);

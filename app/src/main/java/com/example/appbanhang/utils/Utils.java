@@ -11,5 +11,6 @@ public class Utils {
 
     public static List<GioHang> manggiohang;
     public static List<GioHang> mangmuahang = new ArrayList<>();
+
     private static Dangki dangki_current = new Dangki();
 }

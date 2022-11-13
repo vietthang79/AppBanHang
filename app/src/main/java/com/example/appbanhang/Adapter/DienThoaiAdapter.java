@@ -114,7 +114,7 @@ public class DienThoaiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             super(itemView);
             tensp = itemView.findViewById(com.example.appbanhang.R.id.itemdt_ten);
             giasp = itemView.findViewById(com.example.appbanhang.R.id.itemdt_gia);
-            mota = itemView.findViewById(com.example.appbanhang.R.id.itemdt_mota);
+//            mota = itemView.findViewById(com.example.appbanhang.R.id.itemdt_mota);
 //            idsp = itemView.findViewById(com.example.appbanhang.R.id.itemdt_idsp);
             hinhanh = itemView.findViewById(com.example.appbanhang.R.id.itemdt_image);
 

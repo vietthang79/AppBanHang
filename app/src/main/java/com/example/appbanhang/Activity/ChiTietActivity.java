@@ -61,14 +61,14 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class ChiTietActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    TextView tensp, giasp, mota;
+    TextView tensp, giasp, mota,txt_soluong;
     Button btnthem;
-    ImageView imghinhanh;
+    ImageView imghinhanh,cong,tru;
     Spinner spinner;
 
+    int amount = 1;
     SanPhamMoi sanPhamMoi;
     NotificationBadge badge;
-
 
     NetworkChangeListener networkChangeListener = new NetworkChangeListener();
 
@@ -81,6 +81,42 @@ public class ChiTietActivity extends AppCompatActivity {
         ActionToolbar();
         initData();
         initControl();
+        eventClick();
+        ShowToData();
+    }
+
+    private void ShowToData() {
+        if (Utils.manggiohang.size() > 0){
+            for (int i = 0; i<Utils.manggiohang.size(); i++) {
+                if (Utils.manggiohang.get(i).getIdsp() == sanPhamMoi.getId()) {
+                    txt_soluong.setText(Utils.manggiohang.get(i).getSpluong() + "");
+                }
+            }
+        }else {
+            txt_soluong.setText(amount + "");
+        }
+
+        }
+
+    private void eventClick() {
+        cong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                amount = Integer.parseInt(txt_soluong.getText().toString()) + 1;
+                txt_soluong.setText(String.valueOf(amount));
+            }
+        });
+
+        tru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Integer.parseInt(txt_soluong.getText().toString()) > 1 ){
+                    amount = Integer.parseInt(txt_soluong.getText().toString()) - 1;
+                    txt_soluong.setText(String.valueOf(amount));
+                }
+            }
+        });
+
     }
 
     private void initControl() {
@@ -88,14 +124,44 @@ public class ChiTietActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 themGioHang();
+//                AddToCart(amount);
+
             }
         });
     }
 
+//    private void AddToCart(int amount) {
+//        boolean checkExit = false;
+//        int n = 0;
+//        if (Utils.manggiohang.size() > 0){
+//                for (int i = 0; i<Utils.manggiohang.size(); i++){
+//                     if (Utils.manggiohang.get(i).getIdsp() == sanPhamMoi.getId()){
+//                         checkExit = true;
+//                         n = i;
+//                         break;
+//                     }
+//                }
+//        }
+//        if (checkExit){
+//            Utils.manggiohang.get(n).setSpluong(amount);
+//        }else {
+//            long gia = Long.parseLong(sanPhamMoi.getGiasp())* soluong;
+//            GioHang gioHang = new GioHang();
+//            gioHang.setGiasp(gia);
+//             gioHang.setSpluong(soluong);
+//             gioHang.setIdsp(sanPhamMoi.getId());
+//             gioHang.setTensp(sanPhamMoi.getTensp());
+//             gioHang.setHinhsp(sanPhamMoi.getHinhanh());
+//        }
+//
+//
+//
+//    }
+
     private void themGioHang() {
          if (Utils.manggiohang.size() > 0){
              boolean flag = false;
-             int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
+             int soluong = Integer.parseInt(txt_soluong.getText().toString());
              for (int i = 0; i<Utils.manggiohang.size(); i++){
                  if (Utils.manggiohang.get(i).getIdsp() == sanPhamMoi.getId()){
                      Utils.manggiohang.get(i).setSpluong(soluong + Utils.manggiohang.get(i).getSpluong());
@@ -116,7 +182,7 @@ public class ChiTietActivity extends AppCompatActivity {
                  Utils.manggiohang.add(gioHang);
              }
          }else{
-             int soluong = Integer.parseInt(spinner.getSelectedItem().toString());
+             int soluong = Integer.parseInt(txt_soluong.getText().toString());
              long gia = Long.parseLong(sanPhamMoi.getGiasp())* soluong;
              GioHang gioHang = new GioHang();
              gioHang.setGiasp(gia);
@@ -130,7 +196,7 @@ public class ChiTietActivity extends AppCompatActivity {
          }
         int totalItem = 0;
         for (int i =0; i<Utils.manggiohang.size(); i++){
-            totalItem = totalItem+Utils.manggiohang.get(i).getSpluong();
+            totalItem = totalItem + Utils.manggiohang.get(i).getSpluong();
         }
             badge.setText(String.valueOf(totalItem));
     }
@@ -148,9 +214,9 @@ public class ChiTietActivity extends AppCompatActivity {
         }
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         giasp.setText("Gia :"+decimalFormat.format(Double.parseDouble(sanPhamMoi.getGiasp())) + "D");
-        Integer[] so = new Integer[]{1,2,3,4,5,6,7,8,9,10};
-        ArrayAdapter<Integer> adapterspin = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, so);
-        spinner.setAdapter(adapterspin);
+//        Integer[] so = new Integer[]{1,2,3,4,5,6,7,8,9,10};
+//        ArrayAdapter<Integer> adapterspin = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, so);
+//        spinner.setAdapter(adapterspin);
 
     }
 
@@ -172,9 +238,12 @@ public class ChiTietActivity extends AppCompatActivity {
         tensp = findViewById(R.id.txttensp);
         giasp = findViewById(R.id.txtgiasp);
         mota = findViewById(R.id.txtmotachitiet);
-        btnthem = findViewById(R.id.themvaogiohang);
+        btnthem = findViewById(R.id.btn_chitiet_add);
         imghinhanh = findViewById(R.id.imgchitiet);
-        spinner = findViewById(R.id.spinner);
+        cong = findViewById(R.id.item_chitiet_cong);
+        tru = findViewById(R.id.item_chitiet_tru);
+        txt_soluong = findViewById(R.id.item_chitiet_soluong);
+//        spinner = findViewById(R.id.spinner);
         toolbar = findViewById(R.id.toobar);
         badge = findViewById(R.id.menu_sl);
         FrameLayout frameLayoutgiohang = findViewById(R.id.framegiohang);

@@ -18,9 +18,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.appbanhang.R;
+import com.example.appbanhang.SQL.SQLite_NameUsers_Helper;
+import com.example.appbanhang.model.Name_Users;
 import com.example.appbanhang.utils.Utils;
 
 public class Dialog_Activity extends AppCompatActivity {
+    SQLite_NameUsers_Helper sqLiteHelper =  new SQLite_NameUsers_Helper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,10 @@ public class Dialog_Activity extends AppCompatActivity {
                     Intent intent=new Intent(getBaseContext(),MainActivity.class);
                     String ten = editTextname.getText().toString();
                     intent.putExtra("tenkhachhang", ten);
+                    Name_Users name_users = new Name_Users();
+                    name_users.setUserName(editTextname.getText().toString());
+                    sqLiteHelper.addNameUser(name_users);
+
                     startActivity(intent);
                 }
                 return;

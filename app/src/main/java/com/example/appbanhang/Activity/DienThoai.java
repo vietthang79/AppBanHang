@@ -126,7 +126,7 @@ public class DienThoai extends AppCompatActivity {
 
 
                             }else{
-                                Toast.makeText(getApplicationContext(), "Hết dữ liệu", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getApplicationContext(), "Hết dữ liệu", Toast.LENGTH_SHORT).show();
                                 isLoading = true;
                             }
                         },
@@ -167,7 +167,6 @@ public class DienThoai extends AppCompatActivity {
     protected void onStart() {
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(networkChangeListener, filter);
-        FancyToast.makeText(DienThoai.this,"CONNECTION FAIL",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
         super.onStart();
     }
@@ -175,7 +174,6 @@ public class DienThoai extends AppCompatActivity {
     @Override
     protected void onStop() {
         unregisterReceiver(networkChangeListener);
-        FancyToast.makeText(DienThoai.this,"CONNECTION SUCCESS",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
         super.onStop();
     }
 }
