@@ -115,4 +115,8 @@ dependencies {
     // Lottie
     implementation'com.airbnb.android:lottie:3.7.0'
 
-}
+    //QR scanner
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+
+    //Readmore textview
+    implementation 'com.github.gifffert:ExpandableTextView:0.1.6'}

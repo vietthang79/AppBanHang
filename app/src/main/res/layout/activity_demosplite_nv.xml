@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Demo_SQLite.demosplite_NV">
+
+    <EditText
+        android:id="@+id/edt_msnv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="MSNV"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"/>
+
+    <EditText
+        android:id="@+id/edt_tennv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên NV"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"/>
+
+    <EditText
+        android:id="@+id/edt_calam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ca làm"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"/>
+
+    <EditText
+        android:id="@+id/edt_luongNV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lương NV"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"/>
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:paddingStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quyền nhân viên"/>
+    <Spinner
+        android:id="@+id/spinner_quyen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quyền"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"/>
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:paddingStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Trạng thái nhân viên"/>
+    <Spinner
+        android:id="@+id/spinner_trangthai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"/>
+
+    <Button
+        android:id="@+id/btn_xacnhan_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

@@ -25,6 +25,9 @@ import android.database.sqlite.SQLiteOpenHelper;
      public static String name_users = "name_users";
      public static String TABLE_NAMEUSERS ="DANGKI";
 
+     //---------------- NHÂN VIÊN ------------------
+
+
 
 
 

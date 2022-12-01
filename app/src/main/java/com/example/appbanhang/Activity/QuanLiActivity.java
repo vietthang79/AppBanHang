@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +17,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.appbanhang.Adapter.DienThoaiAdapter;
 import com.example.appbanhang.Adapter.SanPhamMoiAdapter;
+import com.example.appbanhang.Adapter.SanPhamMoi_QuanLi_Adapter;
 import com.example.appbanhang.R;
 import com.example.appbanhang.Utilyti.NetworkChangeListener;
 import com.example.appbanhang.model.EventBus.SuaXoa;
@@ -43,10 +46,15 @@ public class QuanLiActivity extends AppCompatActivity {
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     ApiBanHang apiBanHang;
     List<SanPhamMoi> list;
-    SanPhamMoiAdapter adapter;
+    SanPhamMoi_QuanLi_Adapter adapter;
     SanPhamMoi sanPhamSuaXoa;
     Toolbar toolbar;
     NetworkChangeListener networkChangeListener = new NetworkChangeListener();
+    int loai;
+    boolean isLoading = false;
+    Handler handler = new Handler();
+    int page = 1;
+    LinearLayoutManager linearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +67,82 @@ public class QuanLiActivity extends AppCompatActivity {
         initControl();
         ActionToolbar();
         getSpMoi();
+        getData(page);
+        addEventLoad();
+    }
+    private void loadMore() {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                list.add(null);
+                adapter.notifyItemInserted(list.size()-1);
+            }
+        });
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                list.remove(list.size()-1);
+                adapter.notifyItemRemoved(list.size());
+                page = page +1;
+                getData(page);
+                adapter.notifyDataSetChanged();
+                isLoading = false;
+            }
+        }, 2000);
+    }
+
+    private void addEventLoad() {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (isLoading == false){
+                    if (linearLayoutManager.findFirstCompletelyVisibleItemPosition() == list.size()-1){
+                        isLoading = true;
+                        loadMore();
+                    }
+                }
+            }
+        });
+    }
+
+    private void  getData(int page) {
+        compositeDisposable.add(apiBanHang.getSanPham(page, loai)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        sanPhamMoiModel -> {
+                            if (sanPhamMoiModel.isSuccess()){
+                                Log.d("loggg", sanPhamMoiModel.getResult().size() + "....");
+                                if (adapter == null){
+                                    list = sanPhamMoiModel.getResult();
+                                    adapter = new SanPhamMoi_QuanLi_Adapter(getApplicationContext(), list);
+                                    recyclerView.setAdapter(adapter);
+                                }else{
+                                    int vitri = list.size()-1;
+                                    int soluongadd = sanPhamMoiModel.getResult().size();
+                                    for (int i = 0; i<soluongadd; i++){
+                                        list.add(sanPhamMoiModel.getResult().get(i));
+                                    }
+                                    adapter.notifyItemRangeInserted(vitri, soluongadd);
+                                }
+
+
+                            }else{
+//                                Toast.makeText(getApplicationContext(), "Hết dữ liệu", Toast.LENGTH_SHORT).show();
+                                isLoading = true;
+                            }
+                        },
+                        throwable -> {
+                            Toast.makeText(getApplicationContext(),"Không thể kết nối sever", Toast.LENGTH_SHORT).show();
+                        }
+
+                ));
     }
 
     private void initControl() {
@@ -78,7 +162,7 @@ public class QuanLiActivity extends AppCompatActivity {
                         sanPhamMoiModel -> {
                             if (sanPhamMoiModel.isSuccess()){
                                 list = sanPhamMoiModel.getResult();
-                                adapter = new SanPhamMoiAdapter(getApplicationContext(), list);
+                                adapter = new SanPhamMoi_QuanLi_Adapter(getApplicationContext(), list);
                                 recyclerView.setAdapter(adapter);
                             }
                         },

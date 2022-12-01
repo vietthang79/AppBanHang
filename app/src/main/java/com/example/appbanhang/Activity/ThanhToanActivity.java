@@ -11,10 +11,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.appbanhang.Activity.Admin_Login_Home.Login_Admin_Activity;
 import com.example.appbanhang.R;
 import com.example.appbanhang.Utilyti.NetworkChangeListener;
 import com.example.appbanhang.utils.Utils;
@@ -28,7 +30,7 @@ public class ThanhToanActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView txttongtien, txtsodt, txtemail;
     EditText edtdiachi;
-    AppCompatButton btndathang;
+    Button btndathang;
     NetworkChangeListener networkChangeListener = new NetworkChangeListener();
 
     @Override
@@ -78,6 +80,8 @@ public class ThanhToanActivity extends AppCompatActivity {
                     Log.d("Test", new Gson().toJson(Utils.manggiohang));
                     Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
                     FancyToast.makeText(ThanhToanActivity.this,"You have successfully placed your order",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+                    startActivity(new Intent(getApplicationContext(), Login_Admin_Activity.class));
+
                 }
 
             }
@@ -91,6 +95,9 @@ public class ThanhToanActivity extends AppCompatActivity {
         txtemail = findViewById(R.id.txtemail);
         edtdiachi = findViewById(R.id.edtdiachi);
         btndathang = findViewById(R.id.btndathang);
+
+
+
     }
     @Override
     protected void onStart() {

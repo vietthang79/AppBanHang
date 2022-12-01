@@ -53,8 +53,7 @@
                 android:layout_height="275dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:src="@drawable/ic_launcher_background" />
-
+                tools:srcCompat="@tools:sample/avatars" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
@@ -113,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center_horizontal"
-                        android:text="1"
+                        android:text="0"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:textColor="#000000"
@@ -144,6 +143,8 @@
                     android:textColor="#3E3E3E" />
 
             </LinearLayout>
+
+
 
         </LinearLayout>
 

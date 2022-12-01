@@ -12,6 +12,7 @@
         <entry key="..\:/AppBanHang/app/src/main/res/drawable-v24/border2.xml" value="0.103" />
         <entry key="..\:/AppBanHang/app/src/main/res/drawable-v24/border3.xml" value="0.103" />
         <entry key="..\:/AppBanHang/app/src/main/res/drawable-v24/border7.xml" value="0.191" />
+        <entry key="..\:/AppBanHang/app/src/main/res/drawable-v24/border9.xml" value="0.2595" />
         <entry key="..\:/AppBanHang/app/src/main/res/drawable-v24/ic_arrow_back_black_24dp.xml" value="0.177" />
         <entry key="..\:/AppBanHang/app/src/main/res/drawable-v24/ic_local_grocery_store_black_50dp.xml" value="0.177" />
         <entry key="..\:/AppBanHang/app/src/main/res/drawable-v24/ic_search_black_24dp.xml" value="0.177" />
@@ -26,12 +27,14 @@
         <entry key="..\:/AppBanHang/app/src/main/res/drawable/radius_cardview.xml" value="0.1425" />
         <entry key="..\:/AppBanHang/app/src/main/res/drawable/radius_signin.xml" value="0.1985" />
         <entry key="..\:/AppBanHang/app/src/main/res/font/amita.xml" value="0.23047699451245252" />
+        <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_ban1_admin.xml" value="0.20863616930312098" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_check_connect.xml" value="0.2" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_chi_tiet.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_confirm_otp_activiti.xml" value="0.24010416666666667" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_content_provider.xml" value="0.25416666666666665" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_dang_ki.xml" value="0.225" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_dang_nhap.xml" value="0.225" />
+        <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_demosplite_nv.xml" value="0.20863616930312098" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_dialog.xml" value="0.4602076124567474" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_dien_thoai.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_drink_beer.xml" value="0.17708333333333334" />
@@ -43,15 +46,19 @@
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_khoi_phuc_pass2.xml" value="0.25416666666666665" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_lap_top.xml" value="0.25416666666666665" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_login_admin.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_onboarding.xml" value="0.12407407407407407" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_quan_li.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_reset_pass.xml" value="0.25416666666666665" />
+        <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_scanner_view.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_search.xml" value="0.256140350877193" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_send_otp.xml" value="0.25416666666666665" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_splesh_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_table_admin.xml" value="0.2" />
+        <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_tat_ca.xml" value="0.20863616930312098" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_thanh_toan.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_them_spactivity.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/activity_thuoc_la.xml" value="0.20863616930312098" />
@@ -71,9 +78,10 @@
         <entry key="..\:/AppBanHang/app/src/main/res/layout/item_giohang.xml" value="0.4" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/item_linear_soluong.xml" value="0.536" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/item_loading.xml" value="0.25416666666666665" />
-        <entry key="..\:/AppBanHang/app/src/main/res/layout/item_photo.xml" value="0.4" />
+        <entry key="..\:/AppBanHang/app/src/main/res/layout/item_photo.xml" value="0.264" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/item_sanpham.xml" value="0.225" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/item_sp_moi.xml" value="0.4" />
+        <entry key="..\:/AppBanHang/app/src/main/res/layout/item_table.xml" value="0.4" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/layout_dialog_feedback.xml" value="0.536" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/listview_item.xml" value="0.1824074074074074" />
         <entry key="..\:/AppBanHang/app/src/main/res/layout/slide_layout.xml" value="0.25416666666666665" />

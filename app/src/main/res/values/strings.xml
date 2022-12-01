@@ -28,4 +28,15 @@
     <string name="key_google_maps">AIzaSyB1_fECTKVmvJGBNvQkMBtMO-Drc0JavXs</string>
 
 
+    <string-array name="quyen_truy_cap">
+        <item>Admin</item>
+        <item>User</item>
+    </string-array>
+
+    <string-array name="trang_thai_NV">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+
 </resources>

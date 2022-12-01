@@ -1,12 +1,17 @@
 package com.example.appbanhang.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.appbanhang.Adapter.SanPhamMoiAdapter;
@@ -32,6 +37,8 @@ public class TatCaActivity extends AppCompatActivity {
     ApiBanHang apiBanHang;
     List<SanPhamMoi> mangSpMoi;
     XemThemAdapter spAdapter;
+    SanPhamMoi sanPhamSuaXoa;
+    ImageView img_them;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +47,13 @@ public class TatCaActivity extends AppCompatActivity {
         Anhxa();
         getSpMoi();
         ActionToolbar();
+        img_them.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ThemSPActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     public void ActionToolbar(){
         setSupportActionBar(toolbar);
@@ -51,6 +65,45 @@ public class TatCaActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        if (item.getTitle().equals("Update")){
+            suaSanPham();
+        }else if (item.getTitle().equals("Remove")){
+            xoaSanPham();
+        }
+
+        return super.onContextItemSelected(item);
+    }
+
+    private void xoaSanPham() {
+        compositeDisposable.add(apiBanHang.xoaSanPham(sanPhamSuaXoa.getId())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        messageModel -> {
+                            if (messageModel.isSuccess()){
+                                Toast.makeText(getApplicationContext(), messageModel.getMessage(), Toast.LENGTH_LONG).show();
+                                getSpMoi();
+                                Intent main  = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(main);
+                            }else{
+                                Toast.makeText(getApplicationContext(), messageModel.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        },
+                        throwable -> {
+                            Log.d("log", throwable.getMessage());
+                        }
+                ));
+
+    }
+
+    private void suaSanPham() {
+        Intent intent = new Intent(getApplicationContext(), ThemSPActivity.class);
+        intent.putExtra("Update", sanPhamSuaXoa);
+        startActivity(intent);
+
     }
 
     private void getSpMoi() {
@@ -75,6 +128,7 @@ public class TatCaActivity extends AppCompatActivity {
     }
 
     private void Anhxa() {
+        img_them = findViewById(R.id.img_them);
         recyclerViewManHinhChinh = findViewById(R.id.recycleview);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerViewManHinhChinh.setLayoutManager(layoutManager);

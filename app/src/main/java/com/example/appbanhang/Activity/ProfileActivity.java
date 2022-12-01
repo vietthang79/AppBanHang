@@ -37,7 +37,6 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-
                     case R.id.nav_nguoidung:
                         return true;
 
@@ -45,8 +44,6 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),TienIch_Activity.class));
                         overridePendingTransition(3,3);
                         return true;
-
-
                 }
                 return false;
             }

@@ -68,11 +68,13 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyViewHo
                     if (b){
                         Utils.mangmuahang.add(gioHang);
                         EventBus.getDefault().postSticky(new TinhTongEvent());
-                    }else{
+                    }
+                    else{
                         for (int i = 0; i<Utils.mangmuahang.size(); i++){
                             if (Utils.mangmuahang.get(i).getIdsp() == gioHang.getIdsp()){
                                 Utils.mangmuahang.remove(i);
                                 EventBus.getDefault().postSticky(new TinhTongEvent());
+
                             }
                         }
                     }

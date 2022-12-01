@@ -145,6 +145,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 //                + KEY_NEWPASSWORD + " TEXT ,"
                 + KEY_NGAYSINH + " TEXT, "
                 + KEY_GIOITINH + " TEXT " + ")";
+
         db.execSQL(SQL_TABLE_USERS);
     }
 

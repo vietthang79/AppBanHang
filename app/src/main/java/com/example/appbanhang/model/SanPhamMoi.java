@@ -3,6 +3,7 @@ package com.example.appbanhang.model;
 import java.io.Serializable;
 
 public class SanPhamMoi implements Serializable {
+
     int id;
     String tensp;
     String hinhanh;
